@@ -27,3 +27,7 @@ urlpatterns = [
     path('cuentos/', include('app_cuentos.urls')),
     path('', lambda request: HttpResponseRedirect('cuentos/')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

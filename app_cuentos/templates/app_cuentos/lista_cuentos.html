@@ -16,7 +16,8 @@
         {% for cuento in cuentos %}
             <li>
                 {{ cuento.titulo }} - {{ cuento.autor }}
-                <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary">Ver PDF</a>  <!-- Botón para ver el PDF -->
+                <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary">leer Online</a>  <!-- Botón para ver el PDF -->
+                <a href="{{ cuento.archivo_pdf.url }}" target="_blank" class="btn btn-primary">Ver PDF</a>
             </li>
         {% endfor %}
     </ul>
