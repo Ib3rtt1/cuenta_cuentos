@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CuentoForm
 from .models import Cuento
-
 
 # Create your views here.
 
@@ -25,3 +24,8 @@ def agregar_cuento(request):
     else:
         form = CuentoForm()
     return render(request, 'app_cuentos/agregar_cuento.html', {'form': form})
+
+
+def ver_pdf(request, id):
+    cuento = get_object_or_404(Cuento, id=id)
+    return render(request, 'app_cuentos/ver_pdf.html', {'cuento': cuento})

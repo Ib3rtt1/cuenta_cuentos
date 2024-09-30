@@ -9,9 +9,15 @@
     <p>Aquí se mostrará la lista de cuentos.</p>
     <!-- Botón para agregar un nuevo cuento -->
     <a href="{% url 'agregar_cuento' %}" class="btn">Agregar Cuento</a>
+
     <ul>
+
+    </ul>
         {% for cuento in cuentos %}
-            <li>{{ cuento.titulo }} - {{ cuento.autor }}</li>
+            <li>
+                {{ cuento.titulo }} - {{ cuento.autor }}
+                <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary">Ver PDF</a>  <!-- Botón para ver el PDF -->
+            </li>
         {% endfor %}
     </ul>
     

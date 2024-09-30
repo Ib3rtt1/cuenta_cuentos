@@ -1,0 +1,19 @@
+
+{% extends 'app_cuentos/base.html' %}
+
+{% block title %}Ver Cuento{% endblock %}
+
+{% block content %}
+    <h1>{{ cuento.titulo }}</h1>
+    <p>Autor: {{ cuento.autor }}</p>
+
+    <!-- Mostrar la URL del PDF como enlace -->
+    <p>URL del PDF: <a href="{{ cuento.archivo_pdf.url }}">{{ cuento.archivo_pdf.url }}</a></p>
+
+    <!-- iframe para mostrar el PDF -->
+    <iframe src="{{ cuento.archivo_pdf.url }}" width="100%" height="600px" 
+            onerror="this.onerror=null; this.src='/ruta_por_defecto';"></iframe>
+
+    <br>
+    <a href="{% url 'lista_cuentos' %}" class="btn btn-secondary">Volver a la lista</a>
+{% endblock %}
