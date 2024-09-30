@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Cuentos</title>
+</head>
+<body>
+    <h1>Lista de Cuentos</h1>
+    <ul>
+        {% for cuento in cuentos %}
+            <li>{{ cuento.titulo }} - {{ cuento.autor }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
