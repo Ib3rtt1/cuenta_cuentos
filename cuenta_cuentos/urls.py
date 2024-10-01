@@ -22,6 +22,7 @@ from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),  # Ya no debe generar un error
     path('cuentos/', include('app_cuentos.urls')),

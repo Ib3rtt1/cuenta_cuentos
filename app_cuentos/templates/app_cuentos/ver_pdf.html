@@ -12,9 +12,10 @@
 
     <!-- iframe para mostrar el PDF -->
     <iframe src="{{ cuento.archivo_pdf.url }}" width="100%" height="600px" 
-            onerror="this.onerror=null; this.src='/ruta_por_defecto';"></iframe>
+        onerror="this.onerror=null; this.src='/media/pdf/archivo_por_defecto.pdf';"></iframe>
 
     <br>
+    
     <a href="{% url 'lista_cuentos' %}" class="btn btn-secondary">Volver a la lista</a>
 {% endblock %}
 
