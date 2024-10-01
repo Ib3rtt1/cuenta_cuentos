@@ -1,0 +1,11 @@
+.card {
+  width: 100px; /* Ancho de la tarjeta (ajusta según sea necesario) */
+  height: 350px; /* Alto de la tarjeta (ajusta según sea necesario) */
+  margin: auto; /* Centra las tarjetas */
+}
+
+.carousel-item {
+  display: flex; /* Para alinear las tarjetas en el centro */
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+  align-items: center; /* Centra verticalmente las tarjetas */
+}

@@ -6,7 +6,8 @@ from .models import Cuento
 
 
 def index(request):
-    return render(request, 'app_cuentos/index.html')
+    cuentos = Cuento.objects.all()  # Obtén todos los cuentos
+    return render(request, 'app_cuentos/index.html', {'cuentos': cuentos})
 
 
 def lista_cuentos(request):
