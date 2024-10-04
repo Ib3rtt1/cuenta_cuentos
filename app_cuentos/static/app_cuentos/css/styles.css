@@ -1,0 +1,62 @@
+/* body*/
+.body {
+  background-image: url("/static/images/background.jpg");
+  background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+}
+/* navbar*/
+.bgx-navbar{
+  background: palevioletred;
+}
+/* tarjetas*/
+.carta {
+  width: 18rem; /* Ancho de la tarjeta (ajusta según sea necesario) */
+  height:20rem ;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s; /* Transición para box-shadow también */
+}
+.carta img {
+  border: 5px solid #ddd; /* Borde alrededor de la imagen */
+  border-radius: 10px ; /* Bordes redondeados en la parte superior */
+  width: 17rem;
+  height: 17rem ;
+}
+.carta .card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.carta .card-text {
+  color: #555;
+}
+.carta .autor {
+  font-weight: bold;
+}
+.carta .descripcion {
+  font-style: italic;
+}
+/* Efecto de hover */
+.carta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.carousel-item {
+  display: flex; /* Para alinear las tarjetas en el centro */
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+  align-items: center; /* Centra verticalmente las tarjetas */
+}
+/* lista de cuentos */
+.btnx-agregar-cuento {
+  padding: 10px 20px;
+  background-color: violet; /* Color sólido */
+  color: black; /* Color del texto */
+  border: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnx-agregar-cuento:hover {
+  background-color: mediumorchid; /* Color más oscuro al pasar el cursor */
+}

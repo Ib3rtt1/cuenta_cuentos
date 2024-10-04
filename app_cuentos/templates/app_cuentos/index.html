@@ -1,24 +1,32 @@
+
 {% extends 'app_cuentos/base.html' %}
 
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}
-    <h1>Bienvenido a la Guía de Cuentos</h1>
-    <p>Aquí puedes explorar nuestros cuentos.</p>
+    <h1 class="text-center">Bienvenido a la Guía de Cuentos</h1>
+    <p class="text-center">Aquí puedes explorar nuestros cuentos.</p>
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             {% for cuento in cuentos %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <div class="card mx-auto" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="{{ cuento.titulo }}">
+                <div class="card mx-auto p-2 carta">
+                    <img src="{{ cuento.imagen.url }}" class="card-img-top p-1" alt="{{ cuento.titulo }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ cuento.titulo }}</h5>
-                        <p class="card-text">Autor: {{ cuento.autor }}</p>
-                        <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary">Leer Online</a>
-                        <a href="{{ cuento.archivo_pdf.url }}" target="_blank" class="btn btn-secondary">Ver PDF</a>
+                        <h5 class="card-title text-center">{{ cuento.titulo }}</h5>
+                        <p class="card-text">Autor: <span class="autor">{{ cuento.autor }}</span></p>
+                        <p class="card-text descripcion">{{ cuento.descripcion|truncatewords:20 }}</p> <!-- Descripción truncada -->
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary w-100">Leer Online</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{{ cuento.archivo_pdf.url }}" target="_blank" class="btn btn-danger w-100">Ver PDF</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
             {% endfor %}
             <button class="carousel-control-prev btn btn-primary" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

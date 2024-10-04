@@ -1,34 +1,35 @@
-
 {% extends 'app_cuentos/base.html' %}
 
 {% block title %}Lista de Cuentos{% endblock %}
 
 {% block content %}
-    <h1>Lista de Cuentos</h1>
-    <p>Aquí se mostrará la lista de cuentos.</p>
+    <h1 class="mb-4">Lista de Cuentos</h1>
     <!-- Botón para agregar un nuevo cuento -->
-    <a href="{% url 'agregar_cuento' %}" class="btn  btn-success">Agregar Cuento</a>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for cuento in cuentos %}
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{% url 'agregar_cuento' %}" class="btn btn-success">Agregar Cuento</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
                 <tr>
-                    <td>{{ cuento.titulo }}</td>
-                    <td>{{ cuento.autor }}</td>
-                    <td>
-                        <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary">Leer Online</a>
-                        <a href="{{ cuento.archivo_pdf.url }}" target="_blank" class="btn btn-primary">Ver PDF</a>
-                    </td>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Acciones</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
+            </thead>
+            <tbody>
+                {% for cuento in cuentos %}
+                    <tr>
+                        <td>{{ cuento.titulo }}</td>
+                        <td>{{ cuento.autor }}</td>
+                        <td>
+                            <a href="{% url 'ver_pdf' cuento.id %}" class="btn btn-primary btn-sm">Leer Online</a>
+                            <a href="{{ cuento.archivo_pdf.url }}" target="_blank" class="btn btn-secondary btn-sm">Ver PDF</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
+
